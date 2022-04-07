@@ -1,0 +1,73 @@
+.edit-invoice-wrap {
+    height: 100%;
+    width: 125px;
+    background: rgba(0, 0, 200, 0.3);
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 80px;
+    padding-left:20px;
+    width:calc(100% - 80px);
+}
+.edit-form-wrap {
+    padding:60px 40px 0 60px;
+    border-radius: 0 10px 10px 0;
+    width:600px;
+    height:100%;
+    margin-left:-20px;
+    background:$white;
+    position:relative;
+    display:flex;
+    justify-content: space-between;
+    flex-direction:column;
+    label {
+        color:$light-purple;
+        font-size:12px;
+        width:100%;
+    }
+    input {
+        margin-top:10px;
+        width:100%;
+        display:block;
+        padding:13px 10px 10px;
+        border-radius:5px;
+        border:2px solid $very-light-purple;
+        line-height:0;
+    }
+    .id {
+        &:before {
+            content: "#";
+            color:$light-purple;
+        }
+    }
+    .bill-from {
+        margin-top:30px;
+        .heading {
+            color:$light-purple;
+            font-size:120px;
+            font-weight:bold;
+            margin-bottom:25px;
+        }
+    }
+}
+
+.edit-form-footer {
+    width:100%;
+    background:white;
+    height:70px;
+    bottom:0;
+    left:0;
+    display:flex;
+    justify-content:end;
+    align-items:center;
+    box-shadow:-10px 0 100px rgba(0, 0, 0, 0.1);
+    .cancel-button {
+        background:red;
+        color:$light-purple;
+        font-size:12px;
+        font-weight:bold;
+        border:none;
+        border-radius: 20px;
+        padding:10px 20px;
+    }
+}

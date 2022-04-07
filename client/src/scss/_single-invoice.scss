@@ -1,0 +1,117 @@
+.single-invoice {
+    width: 730px;
+    margin: auto;
+    padding: 50px;
+    box-shadow: 0px 10px 10px rgba($blue, 0.1);
+    border-radius:8px;
+    background:$white;
+    .inv-id {
+        font-weight:bold;
+        &:before {
+            content: "#";
+            color:$light-purple
+        }
+    }
+    .inv-desc {
+        color:$light-purple;
+        font-size:12px;
+        margin-top:5px;
+    }
+    .inv-address {
+        font-size:11px;
+        color:$light-purple;
+        line-height:20px;
+        text-align:right
+    }
+}
+
+.invoice-body {
+    display:flex;
+    text-align:left;
+    height:140px;
+    .inv-body-item {
+        color:$light-purple;
+        font-size:12px;
+    }
+    .date {
+        flex: 2 0 0;
+        display:flex;
+        justify-content:space-between;
+        flex-direction:column;
+    }
+    .bill-to {
+        flex: 2 0 0;
+        .content {
+            div {margin-bottom:10px;}
+            div:not(:first-child) {
+                font-size:11px;
+                color:$light-purple;
+                margin:3px 0;
+            }
+        }
+    }
+    .sent-to {
+        flex: 3 0 0
+    }
+    .content {
+        font-size:15px;
+        margin-top:10px;
+    }
+}
+
+.invoice-items {
+    border-radius: 10px;
+    background:$lightest-gray;
+    min-height:100px;
+    width:100%;
+    margin-top:50px;
+    display:flex;
+    justify-content: space-between;
+    padding:40px;
+    .name, .qty, .price, .total {
+        div:not(.item-title) {
+            font-size: 12px;
+            margin-top:35px;
+        }
+    }
+    .name {
+        flex: 2 0 0;
+        
+    }
+    .qty {
+        flex: 1 0 0;
+        text-align:center;
+        color:$light-purple
+    }
+    .price {
+        flex: 1 0 0;
+        text-align:right;
+    }
+    .total {
+        flex: 1 0 0;
+        text-align:right;
+    }
+    .item-title {
+        font-size:11px;
+        color:$light-purple
+    }
+}
+
+.invoice-items-footer {
+    background: $dark-blue-gray;
+    height:80px;
+    width:100%;
+    border-radius: 0 0 10px 10px;
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
+    color:$white;
+    padding: 0 40px;
+    .amount-due {
+        font-size:11px;
+    }
+    .total {
+        font-weight:bold;
+        font-size:24px
+    }
+}
