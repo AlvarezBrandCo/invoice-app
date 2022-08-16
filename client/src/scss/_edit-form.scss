@@ -1,73 +1,107 @@
 .edit-invoice-wrap {
     height: 100%;
     width: 125px;
-    background: rgba(0, 0, 200, 0.3);
+    background: rgba(0, 0, 0, 0.3);
     position: fixed;
     z-index: 1;
     top: 0;
     left: 80px;
-    padding-left:20px;
-    width:calc(100% - 80px);
+    padding-left: 20px;
+    width: calc(100% - 80px);
 }
 .edit-form-wrap {
-    padding:60px 40px 0 60px;
+    padding: 60px 40px 100px 60px;
     border-radius: 0 10px 10px 0;
-    width:600px;
-    height:100%;
-    margin-left:-20px;
-    background:$white;
-    position:relative;
-    display:flex;
+    width: 600px;
+    height: 100%;
+    margin-left: -20px;
+    background: #ffffff;
+    position: relative;
+    display: flex;
     justify-content: space-between;
-    flex-direction:column;
+    flex-direction: column;
+    overflow-y: scroll;
     label {
-        color:$light-purple;
-        font-size:12px;
-        width:100%;
-    }
-    input {
+	color: #7E88C3;
+	font-size: 12px;
+	width: 100%;
         margin-top:10px;
-        width:100%;
+    }
+    .plain-input {
+	width: 100%;
+	padding: 13px 10px 10px;
+	border-radius: 5px;
+	border: 1px solid #DFE3FA;
+        box-shadow:none;
+        line-height: initial;
+        font-weight:bold;
+        &:active, &:target, &:focus-visible {
+            border: 1px solid $purple;
+            outline:red!important;
+        }
+    }
+    .rw-widget-input {
+	width: 100%;
+	padding: 13px 10px 10px;
+	border-radius: 5px;
+        box-shadow:none;
+        line-height: initial;
+    }
+    .rw-dropdown-list-input {
         display:block;
-        padding:13px 10px 10px;
-        border-radius:5px;
-        border:2px solid $very-light-purple;
-        line-height:0;
+        padding:0;
+        color:black;
     }
+    .rw-dropdownlist-search {display:none;}
+    .rw-widget-picker {
+        border: 2px solid #DFE3FA;
+    }
+    .rw_11_input {border:none!important}
     .id {
-        &:before {
-            content: "#";
-            color:$light-purple;
-        }
+	&:before {
+	    content: "#";
+	    color: #7E88C3;
+	}
     }
-    .bill-from {
-        margin-top:30px;
-        .heading {
-            color:$light-purple;
-            font-size:120px;
-            font-weight:bold;
-            margin-bottom:25px;
-        }
+    .bill-from, .bill-to {
+	margin-top: 30px;
+	.heading {
+	    color: #7E88C3;
+	    font-size: 12px;
+	    font-weight: bold;
+	    margin-bottom: 25px;
+	}
     }
 }
-
 .edit-form-footer {
-    width:100%;
-    background:white;
-    height:70px;
-    bottom:0;
-    left:0;
-    display:flex;
-    justify-content:end;
-    align-items:center;
-    box-shadow:-10px 0 100px rgba(0, 0, 0, 0.1);
+    position:absolute;
+    width: 600px;
+    background: $white;
+    padding:10px;
+    height: 70px;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    box-shadow: -20px 0 25px rgba(0, 0, 0, 0.2);
     .cancel-button {
-        background:red;
-        color:$light-purple;
-        font-size:12px;
-        font-weight:bold;
-        border:none;
-        border-radius: 20px;
-        padding:10px 20px;
+	background: rgba(55, 59, 83, 0.07);
+	color: #7E88C3;
+	font-size: 12px;
+	font-weight: bold;
+	border: none;
+	border-radius: 20px;
+	padding: 10px 20px;
+        margin-right:20px;
+    }
+    .save-button {
+	background: rgba(55, 59, 83, 0.07);
+	color: #7E88C3;
+	font-size: 12px;
+	font-weight: bold;
+	border: none;
+	border-radius: 20px;
+	padding: 10px 20px;
     }
 }

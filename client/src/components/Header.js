@@ -2,17 +2,16 @@ import React, { useState, useEffect } from 'react';
 import ArrowDown from "../assets/icon-arrow-down.svg";
 import IconPlus from "../assets/icon-plus.svg";
 import classnames from 'classnames';
+import { useSelector, useDispatch } from 'react-redux'
 
-const Header = ({num, handleFilter, hidden, forceClose}) => {
+const Header = ({num, handleFilter, hidden, forceClose, clearFilter}) => {
   const [filterOpen, filterToggle] = useState(false)
-
   useEffect(() => {
-    // Update the document title using the browser API
     if (forceClose) filterToggle(false)
   });
-  
+
   return (
-    <header className={hidden && "hidden"}>
+    <header className={hidden ? "hidden" : null}>
       <div className="header">
         <div className="flex-grow-1">
           <h2>Invoices</h2>
@@ -22,25 +21,21 @@ const Header = ({num, handleFilter, hidden, forceClose}) => {
           <div className="d-flex align-items-center" onClick={() => filterToggle(!filterOpen)}><span>filter by status</span>
             <img className={classnames("arrow", {"flipped" : filterOpen})} src={ArrowDown}/>
           </div>
-          {
-            filterOpen && (
-              <div className="filter-dropdown">
-                <label className="d-flex align-items-center filter-option">
-                  Paid
-                  <input type="checkbox" name="paid" onClick={handleFilter}/>
-                  <span className="checkmark"></span>
-                </label>
-                <label className="d-flex align-items-center filter-option">Draft
-                  <input type="checkbox" name="draft" onClick={handleFilter}/>
-                  <span className="checkmark"></span>
-                </label>
-                <label className="d-flex align-items-center filter-option my-0">Pending
-                  <input type="checkbox" name="pending" onClick={handleFilter}/>
-                  <span className="checkmark"></span>
-                </label>
-              </div>
-            )
-          }
+          <div className={classnames("filter-dropdown", {"open": filterOpen})}>
+            <label className="d-flex align-items-center filter-option">
+              Paid
+              <input type="checkbox" name="paid" onClick={handleFilter}/>
+              <span className="checkmark"></span>
+            </label>
+            <label className="d-flex align-items-center filter-option">Draft
+              <input type="checkbox" name="draft" onClick={handleFilter}/>
+              <span className="checkmark"></span>
+            </label>
+            <label className="d-flex align-items-center filter-option my-0">Pending
+              <input type="checkbox" name="pending" onClick={handleFilter}/>
+              <span className="checkmark"></span>
+            </label>
+          </div>
         </div>
         <div className="new-invoice-button">
           <div className="circle-plus">

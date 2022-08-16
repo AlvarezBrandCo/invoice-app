@@ -16,17 +16,18 @@
         background-repeat: no-repeat;
         position:absolute;
     }
+    &:hover {opacity:.8}
     &.hidden {
+        &:hover {opacity:0!important}
         opacity:0;
     }
-    &:hover {opacity:.8}
 }
 
 header {
     height:150px;
     &.hidden {
      transition:all .2s ease-in-out;
-     height:0
+     height:0;
     }
 }
 .header {
@@ -52,6 +53,7 @@ header {
 }
 
 .filter-dropdown {
+    display:none;
     padding:20px;
     width:192px;
     position:absolute;
@@ -71,7 +73,10 @@ header {
         margin-bottom:-2px;
           }
     }
+    &.open {
 
+        display:block
+    }
 }
 .arrow {
     height:8px;

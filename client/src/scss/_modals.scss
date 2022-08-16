@@ -1,0 +1,22 @@
+.modal-wrap {
+    height:100vh;
+    width:100%;
+    position:absolute;
+    z-index:1000;
+    background:rgba(0, 0, 0, 0.5);
+    top:0;
+    left:0
+}
+.modal-container {
+    padding:50px;
+    height:250px;
+    width:500px;
+    position:absolute;
+    z-index:2;
+    background:$white;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    border-radius:8px;
+    box-shadow: 0 10px 10px rgba(#48549F, .3);
+}
